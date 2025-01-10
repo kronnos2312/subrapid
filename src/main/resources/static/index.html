@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Primer Proyecto kotlin.">
+    <title>Pagina Bienvenida</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        .welcome-text {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #aaa;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .welcome-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container" role="main">
+    <!-- Header section -->
+    <header>
+        <h1>Hello World!</h1>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <p class="welcome-text">
+            Primer Proyecto kotlin!
+        </p>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 | Jhon Alexander J. Quintero</p>
+    </footer>
+</div>
+</body>
+</html>

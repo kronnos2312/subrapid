@@ -2,6 +2,20 @@
 ``Proyecto guia kotlin creando un backend api rest
 ``
 
+##  Compilar el proyecto
+```CMD
+./gradlew build
+```
+## Empaquetar un archivo JAR ejecutable (Spring Boot)
+```CMD
+./gradlew bootJar
+```
+## Limpiar y forzar la descarga de todas las dependencias
+```CMD
+./gradlew clean build --refresh-dependencies
+```
+
+
 #
 # Getting Started
 
