@@ -4,15 +4,15 @@ import com.server.tecnology.subrapid.dto.AccountDTO
 import com.server.tecnology.subrapid.model.Account
 import com.server.tecnology.subrapid.service.AccountService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.server.ResponseStatusException
 import java.util.*
 
 @RestController
 @RequestMapping("api/account")
 class AccountController(@Autowired private val accountService: AccountService) {
-
-
 
     @PostMapping
     fun create(@RequestBody account: AccountDTO): ResponseEntity<AccountDTO> {
@@ -26,7 +26,7 @@ class AccountController(@Autowired private val accountService: AccountService) {
             accountService.deleteById(id)
             return ResponseEntity.ok(AccountDTO(account.get(),"delete","200"))
         }
-        return ResponseEntity.badRequest().build()
+        throw ResponseStatusException(HttpStatus.NOT_FOUND,"Accout not Found by: $id ")
     }
 
     @GetMapping("/{id}")
@@ -35,13 +35,11 @@ class AccountController(@Autowired private val accountService: AccountService) {
         if (account.isPresent) {
             return ResponseEntity.ok(AccountDTO(account.get(),"Found","200"))
         }
-        return ResponseEntity.badRequest().build()
+        throw ResponseStatusException(HttpStatus.NOT_FOUND,"Accout not Found by: $id ")
     }
 
     @GetMapping
     fun findAll(): ResponseEntity<Iterable<Account>>  {
         return ResponseEntity.ok(accountService.all())
     }
-
-
 }
